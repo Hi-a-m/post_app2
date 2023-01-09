@@ -12,7 +12,7 @@
     <th>終了日</th>
     <th>終日</th>
     <th>スケジュール更新日時</th>
-    <th>確認</th>
+    <th>詳細</th>
     <th>編集</th>
     <th>削除</th>
     </tr>
@@ -24,19 +24,19 @@
         <tr>
           <td><%= post.id %></td>
           <td><%= post.title %></td>
-          <td><%= post.start_at.strftime("%Y年%m月%d日") %></td>
-          <td><%= post.end_at.strftime("%Y年%m月%d日") %></td>
+          <td><%= post.start_at.strftime('%Y/%m/%d') %></td>
+          <td><%= post.end_at.strftime('%Y/%m/%d') %></td>
           <td>
              <% if post.is_all_day %>
                  <strong>○</strong>
              <% end %>
           </td>
           <td>
-            <%= post.updated_at.strftime("%Y年%m月%d日%H時%M分") %>
+            <%= post.updated_at.strftime('%Y/%m/%d %H:%M') %>
           </td>
 
           <td>
-            <%= link_to "確認", post_path(post) %>
+            <%= link_to "詳細", post_path(post) %>
           </td>
 
           <td>
@@ -58,7 +58,7 @@
 
 
 <div class = footer>
-  本日の日付：<%= Date.today.strftime("%Y年%m月%d日") %>  スケジュール合計： <%= @post_count %>
+  本日の日付：<%= Date.today.strftime('%Y/%m/%d') %>  スケジュール合計： <%= @post_count %>
 </div>
 
 

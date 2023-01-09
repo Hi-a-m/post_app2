@@ -9,13 +9,12 @@
 
   <tr>
     <th>開始日</th>
-    <td><%= @post.start_at.strftime("%Y年%m月%d日") %></td>
+    <td><%= @post.start_at.strftime('%Y/%m/%d') %></td>
   </tr>
 
-
   <tr>
-    <th>更新日時</th>
-    <td><%= @post.updated_at.strftime("%Y年%m月%d日%H時%M分") %></td>
+    <th>終了日</th>
+    <td><%= @post.end_at.strftime('%Y/%m/%d') %></td>
   </tr>
 
   <tr>
@@ -46,7 +45,7 @@
 
 
 <div class = footer>
-  本日の日付：<%= Date.today.strftime("%Y年%m月%d日") %>
+  本日の日付：<%= Date.today.strftime('%Y/%m/%d') %>
 </div>
 
 
